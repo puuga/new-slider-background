@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         var color = UIColor(red: CGFloat(sdRed.value),green: CGFloat(sdGreen.value),blue: CGFloat(sdBlue.value),alpha: 1.0);
         var invColor = UIColor(red: 1-CGFloat(sdRed.value),green: 1-CGFloat(sdGreen.value),blue: 1-CGFloat(sdBlue.value),alpha: 1.0);
         
-        self.view.backgroundColor = color
+        changeRootViewBackground(color);
         //self.view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0);
         
         ulRVal.text = NSString(format: "%.2f", sdRed.value);
@@ -74,6 +74,10 @@ class ViewController: UIViewController {
         ulGVal.textColor = invColor
         ulBVal.text = NSString(format: "%.2f", sdBlue.value);
         ulBVal.textColor = invColor
+    }
+    
+    func changeRootViewBackground(color:UIColor) {
+        self.view.backgroundColor = color
     }
 
 
