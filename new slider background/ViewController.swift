@@ -10,21 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var sdRed:UISlider = UISlider(frame: CGRect(x: 80, y: 40, width: 200, height: 40));
-    var sdGreen:UISlider = UISlider(frame: CGRect(x: 80, y: 100, width: 200, height: 40));
-    var sdBlue:UISlider = UISlider(frame: CGRect(x: 80, y: 160, width: 200, height: 40));
+    var sdRed:UISlider!;
+    var sdGreen:UISlider!;
+    var sdBlue:UISlider!;
     
-    var ulRVal:UILabel = UILabel(frame: CGRect(x: 300, y: 40, width: 60, height: 40));
-    var ulGVal:UILabel = UILabel(frame: CGRect(x: 300, y: 100, width: 60, height: 40));
-    var ulBVal:UILabel = UILabel(frame: CGRect(x: 300, y: 160, width: 60, height: 40));
+    var ulRVal:UILabel!;
+    var ulGVal:UILabel!;
+    var ulBVal:UILabel!;
+    
+    var ulR:UILabel!;
+    var ulG:UILabel!;
+    var ulB:UILabel!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var ulR:UILabel = UILabel(frame: CGRect(x: 20, y: 40, width: 60, height: 40));
-        var ulG:UILabel = UILabel(frame: CGRect(x: 20, y: 100, width: 60, height: 40));
-        var ulB:UILabel = UILabel(frame: CGRect(x: 20, y: 160, width: 60, height: 40));
+        bindWidget();
         
         ulR.text = "RED";
         ulR.textColor = UIColor.redColor();
@@ -53,6 +55,20 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func bindWidget() {
+        sdRed = UISlider(frame: CGRect(x: 80, y: 40, width: 200, height: 40));
+        sdGreen = UISlider(frame: CGRect(x: 80, y: 100, width: 200, height: 40));
+        sdBlue = UISlider(frame: CGRect(x: 80, y: 160, width: 200, height: 40));
+        
+        ulRVal = UILabel(frame: CGRect(x: 300, y: 40, width: 60, height: 40));
+        ulGVal = UILabel(frame: CGRect(x: 300, y: 100, width: 60, height: 40));
+        ulBVal = UILabel(frame: CGRect(x: 300, y: 160, width: 60, height: 40));
+        
+        ulR = UILabel(frame: CGRect(x: 20, y: 40, width: 60, height: 40));
+        ulG = UILabel(frame: CGRect(x: 20, y: 100, width: 60, height: 40));
+        ulB = UILabel(frame: CGRect(x: 20, y: 160, width: 60, height: 40));
     }
     
     func bindEventToSlider() {
